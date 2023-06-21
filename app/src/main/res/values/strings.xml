@@ -2,4 +2,8 @@
     <string name="app_name">modulo5</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pregunta">¿Conoces a este Pokemon?</string>
+    <string name="respuesta1">SI</string>
+    <string name="respuesta2">NO</string>
+    <string name="nose"></string>
 </resources>
