@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.modulo5.databinding.ActivityMainBinding;
 import com.example.modulo5.databinding.Fragment2Binding;
 
 public class Fragment2 extends Fragment {
@@ -38,8 +40,13 @@ public class Fragment2 extends Fragment {
             name = getArguments().getString("clave1");
             lastname = getArguments().getString("clave2");
         }
-    }
 
+    }
+    public void onSalirButtonClick() {
+        // Finalizar la actividad actual y salir de la aplicación
+        requireActivity().finish();
+        System.exit(0);
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,4 +61,5 @@ public class Fragment2 extends Fragment {
         mBinding.name.setText(name);
         mBinding.lastname.setText(lastname);
     }
+
 }

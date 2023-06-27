@@ -28,38 +28,45 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/contenedor2"
         android:name="com.example.modulo5.Fragment2"
-        android:layout_width="390dp"
-        android:layout_height="168dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="411dp"
+        android:layout_height="165dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/open"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/button"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#BABDBD"
+        android:text="@string/salir"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/open"
-        android:layout_width="368dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="177dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="144dp"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="25dp"
         android:backgroundTint="#D8AB42"
         android:text="@string/abrir"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="367dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#BCBFBE"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/open" />
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="37dp"
+        android:backgroundTint="#CB8234"
+        android:text="Mostrar"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

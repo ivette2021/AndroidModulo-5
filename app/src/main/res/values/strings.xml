@@ -7,5 +7,6 @@
     <string name="respuesta2">NO</string>
     <string name="nose"></string>
     <string name="textview">TextView</string>
-    <string name="abrir">abrir</string>
+    <string name="abrir">Abrir</string>
+    <string name="salir">Salir</string>
 </resources>
