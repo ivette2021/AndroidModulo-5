@@ -30,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        mBinding.button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFragment2("Ivette", "Valdivia");
+            }
+        });
     }
     private void openFragment(){
         // primer paso instaniar el fragmento
@@ -38,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager manager = getSupportFragmentManager();
         // 3 crear la transaccion
 
-        if (questionFragment != null){
-            FragmentTransaction transaction = manager.beginTransaction();
-            transaction.remove(questionFragment).commit();
+            FragmentTransaction transaction = manager.beginTransaction().replace(mBinding.contenedor2.getId(),questionFragment, QuestionFragment.class.getSimpleName());
+            transaction.commit();
+            //transaction.remove(questionFragment).commit();
             mBinding.open.setText("cerrar");
-            isFragmentShow = false;
-        }
+            isFragmentShow = true;
+
 
     }
     private void closeFragment(){
@@ -54,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction transaction = manager.beginTransaction();
             transaction.remove(questionFragment).commit();
             mBinding.open.setText("abrir");
-            isFragmentShow = true;
+            isFragmentShow = false;
         }
     }
     private void openFragment2(String name, String lastname) {
         // primer paso instaniar el fragmento 2
-        Fragment2 fragment2 = new Fragment2();
+        Fragment2 fragment2 = Fragment2.newInstance( name,  lastname);
         // 2 instancia del fragment manager
         FragmentManager manager = getSupportFragmentManager();
         // 3 verificar si el contenedor
