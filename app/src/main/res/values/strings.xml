@@ -6,4 +6,5 @@
     <string name="respuesta1">SI</string>
     <string name="respuesta2">NO</string>
     <string name="nose"></string>
+    <string name="textview">TextView</string>
 </resources>
