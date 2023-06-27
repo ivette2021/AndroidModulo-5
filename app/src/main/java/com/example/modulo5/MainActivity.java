@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         if (fragment2 != null) {
 
             FragmentTransaction transaction = manager.beginTransaction().replace(mBinding.contenedor.getId(),fragment2,Fragment2.class.getSimpleName());
-            mBinding.open.setText("cerrar");
+            mBinding.button2.setText("cerrar");
             isFragmentShow = false;
             transaction.commit();
         }
