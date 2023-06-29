@@ -11,12 +11,12 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_name"
         android:layout_width="241dp"
         android:layout_height="65dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="65dp"
-        android:text="Hola, Nombre !"
+        android:text="@string/greeting"
         android:textColor="@color/blanco"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -24,26 +24,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="241dp"
         android:layout_height="224dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="1dp"
         android:src="@drawable/ic_whatsapp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_pregunta"
         android:layout_width="241dp"
         android:layout_height="47dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="2dp"
-        android:text="¿A Quien pertence el logo?"
+        android:text="@string/question"
         android:textColor="@color/blanco"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -52,49 +52,49 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="1dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/tv_pregunta">
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/rb1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Facebook"
+            android:text="@string/rb_answer1"
             android:textColor="@color/blanco"
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/rb2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Telegram"
+            android:text="@string/rb_answer2"
             android:textColor="@color/blanco"
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/rb3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Whatsapp"
+            android:text="@string/rb_answer3"
             android:textColor="@color/blanco"
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/rb4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Line"
+            android:text="@string/rb_answer4"
             android:textColor="@color/blanco"
             android:textSize="16sp" />
     </RadioGroup>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn2"
         android:layout_width="145dp"
         android:layout_height="60dp"
         android:layout_marginStart="133dp"
         android:layout_marginTop="3dp"
         android:backgroundTint="@color/rclaro"
-        android:text="Button"
+        android:text="@string/verificar"
         android:textColor="@color/blanco"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"

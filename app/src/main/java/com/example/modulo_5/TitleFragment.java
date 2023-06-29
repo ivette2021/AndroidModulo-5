@@ -32,11 +32,11 @@ public class TitleFragment extends Fragment {
 
         binding=FragmentTitleBinding.inflate(inflater,container,false);
         View view  = binding.getRoot();
-        binding.button.setOnClickListener(new View.OnClickListener() {
+        binding.btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!binding.editTextText.getText().toString().isEmpty()){
-                    addLogoTriviaFragment(binding.editTextText.getText().toString());
+                if(!binding.etNombre.getText().toString().isEmpty()){
+                    addLogoTriviaFragment(binding.etNombre.getText().toString());
                 } else{
                     Toast.makeText(getContext(), "Ingrese su nombre", Toast.LENGTH_SHORT).show();
                 }
@@ -47,7 +47,6 @@ public class TitleFragment extends Fragment {
     private  void addLogoTriviaFragment(String name){
         Bundle bundle  = new Bundle();
         bundle.putString("clave1", name);
-        LogoTriviaFragment  logoTriviaFragment= LogoTriviaFragment.newInstance(name,"");
         Navigation.findNavController(binding.getRoot())
                 .navigate(R.id.action_titleFragment_to_logoTriviaFragment,bundle);
     }

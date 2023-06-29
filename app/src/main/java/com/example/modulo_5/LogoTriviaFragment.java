@@ -8,14 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class LogoTriviaFragment extends Fragment {
+import com.example.modulo_5.databinding.FragmentLogoTriviaBinding;
 
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class LogoTriviaFragment extends Fragment {
+    FragmentLogoTriviaBinding binding;
     private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     private String mParam1;
-    private String mParam2;
 
     public LogoTriviaFragment() {
         // Required empty public constructor
@@ -26,7 +25,7 @@ public class LogoTriviaFragment extends Fragment {
         LogoTriviaFragment fragment = new LogoTriviaFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -36,14 +35,18 @@ public class LogoTriviaFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_logo_trivia, container, false);
+       binding = FragmentLogoTriviaBinding.inflate(inflater, container, false);
+       View view = binding.getRoot();
+
+       String greeting = getString(R.string.greeting,mParam1);
+       binding.tvName.setText(greeting);
+        return view;
     }
 }

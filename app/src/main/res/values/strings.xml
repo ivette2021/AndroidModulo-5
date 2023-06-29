@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">Modulo_5</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="greeting">Hola, %1$s!</string>
+    <string name="try_again_msg">Intentalo otra vez !</string>
+    <string name="try_again_btn">Intentalo otra vez</string>
+    <string name="win_msg">Muy Bien, sigue asi !</string>
+    <string name="win_msg_btn">Siguiente</string>
+    <string name="question">¿A Quien pertence el logo?</string>
+    <string name="rb_answer1">Facebook</string>
+    <string name="rb_answer2">Telegram</string>
+    <string name="rb_answer3">Whatsapp</string>
+    <string name="rb_answer4">Line</string>
+    <string name="verificar">Siguiente</string>
+
 </resources>

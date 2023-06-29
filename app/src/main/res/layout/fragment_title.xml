@@ -11,7 +11,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/et_nombre"
         android:layout_width="249dp"
         android:layout_height="60dp"
         android:layout_marginStart="80dp"
@@ -21,10 +21,10 @@
         android:text="Tu nombre"
         android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_bienvenido" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_bienvenido"
         android:layout_width="230dp"
         android:layout_height="66dp"
         android:layout_marginStart="88dp"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn1"
         android:layout_width="153dp"
         android:layout_height="69dp"
         android:layout_marginStart="140dp"
@@ -45,6 +45,6 @@
         android:text="Comenzar"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nombre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
