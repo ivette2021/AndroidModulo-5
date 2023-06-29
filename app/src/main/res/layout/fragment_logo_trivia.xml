@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_bg1"
     tools:context=".LogoTriviaFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -16,7 +17,9 @@
         android:layout_marginStart="85dp"
         android:layout_marginTop="65dp"
         android:text="Hola, Nombre !"
+        android:textColor="@color/blanco"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +39,8 @@
         android:layout_height="47dp"
         android:layout_marginStart="85dp"
         android:layout_marginTop="2dp"
-        android:text="¿Quien pertence el logo?"
+        android:text="¿A Quien pertence el logo?"
+        android:textColor="@color/blanco"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -55,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Facebook"
+            android:textColor="@color/blanco"
             android:textSize="16sp" />
 
         <RadioButton
@@ -62,6 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Telegram"
+            android:textColor="@color/blanco"
             android:textSize="16sp" />
 
         <RadioButton
@@ -69,6 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Whatsapp"
+            android:textColor="@color/blanco"
             android:textSize="16sp" />
 
         <RadioButton
@@ -76,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Line"
+            android:textColor="@color/blanco"
             android:textSize="16sp" />
     </RadioGroup>
 
@@ -84,8 +92,10 @@
         android:layout_width="145dp"
         android:layout_height="60dp"
         android:layout_marginStart="133dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="3dp"
+        android:backgroundTint="@color/rclaro"
         android:text="Button"
+        android:textColor="@color/blanco"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
