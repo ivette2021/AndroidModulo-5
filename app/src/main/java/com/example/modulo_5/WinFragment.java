@@ -40,4 +40,10 @@ public class WinFragment extends Fragment {
         navController.navigate(R.id.titleFragment);
         });
     }
+    // destruir el fragmento
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

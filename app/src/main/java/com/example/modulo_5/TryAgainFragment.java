@@ -37,8 +37,14 @@ public class TryAgainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 //(v -> { se utiliza para definir el método OnClickListener de forma concisa y simplificada.
         binding.button3.setOnClickListener(v -> {
-            NavController navController = Navigation.findNavController(view);
+            NavController navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);;
             navController.navigate(R.id.logoTriviaFragment);
         });
+    }
+    // destruir el fragmento
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

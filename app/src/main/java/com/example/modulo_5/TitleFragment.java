@@ -2,12 +2,15 @@ package com.example.modulo_5;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +46,18 @@ public class TitleFragment extends Fragment {
 
         return view;
     }
+    @Override //cuando agregamos estas lineas se ve el fragment de perder o ganar
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.btn1.setOnClickListener(v -> {
+            String name = binding.etNombre.getText().toString();
+            Log.d("TitleFragment", "Name: " + name);
+            LogoTriviaFragment logoTriviaFragment = LogoTriviaFragment.newInstance(name);
+            // Navegar al fragmento LogoTriviaFragment al hacer clic en el botón "Comenzar"
+            Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_logoTriviaFragment);
+        });
+    }
 
     private void addLogoTriviaFragment(String name) {
         LogoTriviaFragment logoTriviaFragment = LogoTriviaFragment.newInstance(name);
@@ -54,7 +69,7 @@ public class TitleFragment extends Fragment {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-// destruir el fragmento
+    // destruir el fragmento
     @Override
     public void onDestroyView() {
         super.onDestroyView();
