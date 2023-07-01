@@ -84,6 +84,7 @@ public class LogoTriviaFragment extends Fragment {
     public void setName(String name) {
         this.name = name;
     }
+    // destruir el fragmento
     @Override
     public void onDestroyView() {
         super.onDestroyView();
