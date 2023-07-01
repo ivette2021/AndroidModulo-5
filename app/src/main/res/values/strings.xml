@@ -11,5 +11,8 @@
     <string name="rb_answer3">Whatsapp</string>
     <string name="rb_answer4">Line</string>
     <string name="verificar">Siguiente</string>
+    <string name="btn_comenzar">Comenzar</string>
+    <string name="txt_logotrivia">Bienvenidos a Logo Trivia!!</string>
+    <string name="tu_nombre">Tu nombre</string>
 
 </resources>

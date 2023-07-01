@@ -8,7 +8,6 @@
     android:background="@drawable/img_inicio"
     tools:context=".TitleFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <EditText
         android:id="@+id/et_nombre"
@@ -18,7 +17,7 @@
         android:layout_marginTop="84dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Tu nombre"
+        android:hint="@string/tu_nombre"
         android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_bienvenido" />
@@ -29,7 +28,7 @@
         android:layout_height="66dp"
         android:layout_marginStart="88dp"
         android:layout_marginTop="116dp"
-        android:text="Bienvenidos a Logo Trivia!!"
+        android:text="@string/txt_logotrivia"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +41,7 @@
         android:layout_marginStart="140dp"
         android:layout_marginTop="164dp"
         android:backgroundTint="@color/voscuro"
-        android:text="Comenzar"
+        android:text="@string/btn_comenzar"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_nombre" />
