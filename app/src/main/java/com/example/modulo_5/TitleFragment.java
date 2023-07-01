@@ -54,7 +54,7 @@ public class TitleFragment extends Fragment {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-
+// destruir el fragmento
     @Override
     public void onDestroyView() {
         super.onDestroyView();
