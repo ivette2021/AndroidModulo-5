@@ -32,17 +32,6 @@ public class TitleFragment extends Fragment {
         binding = FragmentTitleBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        binding.btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = binding.etNombre.getText().toString();
-                if (!name.isEmpty()) {
-                    addLogoTriviaFragment(name);
-                } else {
-                    Toast.makeText(getContext(), "Ingrese su nombre", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
         return view;
     }
@@ -50,12 +39,19 @@ public class TitleFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.btn1.setOnClickListener(v -> {
-            String name = binding.etNombre.getText().toString();
-            Log.d("TitleFragment", "Name: " + name);
-            LogoTriviaFragment logoTriviaFragment = LogoTriviaFragment.newInstance(name);
+
+            binding.btn1.setOnClickListener(v -> {
+
+                String name = binding.etNombre.getText().toString();
+                if (name.isEmpty()){
+                    Toast.makeText(getContext(),"ingrese su nombre ",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    LogoTriviaFragment logoTriviaFragment = LogoTriviaFragment.newInstance(name);
+                    logoTriviaFragment.setName(name);
+                    Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_logoTriviaFragment);
+                }
             // Navegar al fragmento LogoTriviaFragment al hacer clic en el botón "Comenzar"
-            Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_logoTriviaFragment);
         });
     }
 
@@ -69,10 +65,5 @@ public class TitleFragment extends Fragment {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-    // destruir el fragmento
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+
 }

@@ -18,7 +18,7 @@ import com.example.modulo_5.databinding.FragmentLogoTriviaBinding;
 
 public class LogoTriviaFragment extends Fragment {
     FragmentLogoTriviaBinding binding;
-    private static final String ARG_NAME = "name";
+    public static  String ARG_NAME = "name";
     private String name;
     private boolean radioButtonChecked = false; // Variable para verificar si se selecciona el botón de radio
 
@@ -31,32 +31,17 @@ public class LogoTriviaFragment extends Fragment {
         LogoTriviaFragment fragment = new LogoTriviaFragment();
         Bundle args = new Bundle();
         args.putString(ARG_NAME, name);
+        ARG_NAME=name;
         fragment.setArguments(args);
         return fragment;
     }
-
-    /*@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            name = getArguments().getString(ARG_NAME);
-        }
-    }*/
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        binding = FragmentLogoTriviaBinding.inflate(inflater, container, false);
        View view = binding.getRoot();
-        if (getArguments() != null) {
-            name = getArguments().getString(ARG_NAME);
-            Log.d("LogoTriviaFragment", "Name argument: " + name);
-        }
-
-            String greeting = getString(R.string.greeting, name);
+            String greeting = getString(R.string.greeting, ARG_NAME);
             binding.tvName.setText(greeting);
-
-
         return view;
     }
     // Método para establecer el nombre ingresado por el usuario
