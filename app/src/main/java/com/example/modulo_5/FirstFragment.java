@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavHost;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,12 +36,21 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.btn1.setOnClickListener(new View.OnClickListener() {
+        /***  1 instanciar el adapter y le pasamos los datos con las palabras ***/
+        WordAdapter adapter = new WordAdapter(setData());
+        /*** 2 pasamos el adapter al recycleview ***/
+        binding.Rv.setAdapter(adapter); //estamos seteando los datos
+        /**  3 indicamos al recyclerview como mostrar datos**/
+        binding.Rv.setLayoutManager(new LinearLayoutManager(getContext()));//le decimos como se mostraran
+        binding.Rv.setHasFixedSize(true); //vaya mostrando los datos nuevos al final
+
+
+     /*   binding.btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_firstFragment_to_secondFragment);
             }
-        });
+        });*/
     }
     // 2 crear un listado de palabras
     private List<String> setData(){

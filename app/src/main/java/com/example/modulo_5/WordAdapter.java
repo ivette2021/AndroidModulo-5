@@ -10,32 +10,37 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.modulo_5.databinding.WordItemListBinding;
 
 import java.util.List;
-// 3 extiendo la clase wordadapter que contiene la clase interna wordviewholder
+ /*** 3 extiendo la clase wordadapter que contiene la clase interna wordviewholder ***/
 public class WordAdapter extends  RecyclerView.Adapter<WordAdapter.WordViewHolder>{
 
-    //añadir representacion de los datos-----------------
+    /***** 1 añadir representacion de los datos ***********/
     private List<String>mwordList;
 
+     /***** 7 constructor que recibe los datos desde el otra ventana  ***********/
+     public WordAdapter(List<String>mwordList){
+         this.mwordList =mwordList;
+     }
+
+    /******* 4 inicializa la vista y la infla, el contructor recibe un objeto le pasamos binding, instancamos  viewbinding para retornar nuestro viewholder con esa dependencia *****/
     @NonNull
-    //4 inicializa la vista y la infla, el contructor recibe un objeto le pasamos binding, instancamos  viewbinding para retornar nuestro viewholder con esa dependencia
     @Override
     public WordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
       WordItemListBinding mBinding = WordItemListBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
               return new WordViewHolder(mBinding);
     }
-//los setea , recibe una posicion y los va colocando
+//**** 5 los setea , recibe una posicion y los va colocando , asignamos el valor especifico de una lista  de datos a la vista visual correspondiente al recycle view
     @Override
     public void onBindViewHolder(@NonNull WordViewHolder holder, int position) {
 String element = mwordList.get(position);
 holder.textview.setText(element);
     }
-//6 este metodo lleva la cuenta de cuantos elementos hay en el listado
+/****** 6 este metodo lleva la cuenta de cuantos elementos hay en el listado  ****/
     @Override
     public int getItemCount() {
         return mwordList.size();
     }
 
-    // crear clase interna que se llama ViewHolder--------------------
+    /*** 2 crear clase interna que se llama ViewHolder****************************/
 
     //inicializamos textview que esta dentro del xml y llamamos mbinding del mismo xml  que tiene textview
     //nos pedira implementar su contructor de la super clase
