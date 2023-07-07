@@ -21,18 +21,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FirstFragment extends Fragment {
-
     private FragmentFirstBinding binding;
     //1.- creamos un list que represente los datos
     private List<String>datalist = new ArrayList<>();
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        binding = FragmentFirstBinding.inflate(inflater, container,false);
        return binding.getRoot();
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -53,13 +50,11 @@ public class FirstFragment extends Fragment {
 
         /******************LÓGICA del button******************************************************************/
 
-
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 datalist.add("PALABRA"+ datalist.size());
-                // notificar al adapter que insertamos datos
+                // notificar al adapter que se insertaron los datos
 
                 binding.Rv.getAdapter().notifyItemInserted(datalist.size());
                 // scroll al final de la lista
@@ -67,15 +62,13 @@ public class FirstFragment extends Fragment {
             }
         });
     }
-
     // 2 crear un listado de palabras
     private List<String> setData() {
-        for (int i = 0; i < 99; i++) {
-            datalist.add("Palabra:" + i);
-        }
+
+            datalist.add("Palabra: " );
+
         return datalist;
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
