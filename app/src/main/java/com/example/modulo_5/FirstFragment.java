@@ -9,6 +9,7 @@ import androidx.navigation.NavHost;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,33 +36,50 @@ public class FirstFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+       // PARA PROBAR QUE HAY DATOS
         /***  1 instanciar el adapter y le pasamos los datos con las palabras ***/
+
         WordAdapter adapter = new WordAdapter(setData());
+
         /*** 2 pasamos el adapter al recycleview ***/
+
         binding.Rv.setAdapter(adapter); //estamos seteando los datos
+
         /**  3 indicamos al recyclerview como mostrar datos**/
+
         binding.Rv.setLayoutManager(new LinearLayoutManager(getContext()));//le decimos como se mostraran
+
         binding.Rv.setHasFixedSize(true); //vaya mostrando los datos nuevos al final
 
+        /******************LÓGICA del button******************************************************************/
 
-     /*   binding.btn1.setOnClickListener(new View.OnClickListener() {
+
+        binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_firstFragment_to_secondFragment);
+
+                datalist.add("PALABRA"+ datalist.size());
+                // notificar al adapter que insertamos datos
+
+                binding.Rv.getAdapter().notifyItemInserted(datalist.size());
+                // scroll al final de la lista
+                binding.Rv.smoothScrollToPosition(datalist.size());
             }
-        });*/
+        });
     }
+
     // 2 crear un listado de palabras
-    private List<String> setData(){
-        for (int i=0; i<99; i++){
-            datalist.add("Palabra"+i);
+    private List<String> setData() {
+        for (int i = 0; i < 99; i++) {
+            datalist.add("Palabra:" + i);
         }
-return datalist;
+        return datalist;
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
+
 }
