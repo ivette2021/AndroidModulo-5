@@ -42,6 +42,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
     /****** 6 este metodo lleva la cuenta de cuantos elementos hay en el listado  ****/
     @Override
     public int getItemCount() {
+
         return mwordList.size();
     }
 
