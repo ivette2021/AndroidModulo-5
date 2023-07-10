@@ -19,6 +19,7 @@ import com.example.modulo_5.databinding.FragmentFirstBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
@@ -28,6 +29,7 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        binding = FragmentFirstBinding.inflate(inflater, container,false);
+
        return binding.getRoot();
     }
     @Override
@@ -50,17 +52,30 @@ public class FirstFragment extends Fragment {
 
         /******************LÓGICA del button******************************************************************/
 
+
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 datalist.add("PALABRA"+ datalist.size());
                 // notificar al adapter que se insertaron los datos
 
-                binding.Rv.getAdapter().notifyItemInserted(datalist.size());
+                Objects.requireNonNull(binding.Rv.getAdapter()).notifyItemInserted(datalist.size());
                 // scroll al final de la lista
                 binding.Rv.smoothScrollToPosition(datalist.size());
             }
         });
+        //aqui continua la escucha de los textos
+        WordAdapter adapter1 = new WordAdapter(datalist);
+        adapter1.setOnItemClickListener(new WordAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                datalist.set(position,"clicked!"+datalist.get(position));
+                Objects.requireNonNull(binding.Rv.getAdapter()).notifyItemChanged(position);
+
+
+            }
+        });
+        binding.Rv.setAdapter(adapter1);
     }
     // 2 crear un listado de palabras
     private List<String> setData() {

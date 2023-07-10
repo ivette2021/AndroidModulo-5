@@ -1,6 +1,8 @@
 package com.example.modulo_5;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -16,7 +18,16 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     /***** 1 añadir representacion de los datos ***********/
     private List<String> mwordList;
-
+    // se agrega un itemclicklistener para los eventos de las textos añadidos
+    private OnItemClickListener listener;
+    //alamacena la posicion de la palabra como tal
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+    //se creo un contructor para la escucha del evento
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
     /***** 7 constructor que recibe los datos desde el otra ventana  ***********/
     public WordAdapter(List<String> mwordList) {
         this.mwordList = mwordList;
@@ -34,15 +45,25 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
 
     //**** 5 los setea , recibe una posicion y los va colocando , asignamos el valor especifico de una lista  de datos a la vista visual correspondiente al recycle view
     @Override
-    public void onBindViewHolder(@NonNull WordViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull WordViewHolder holder, @SuppressLint("RecyclerView") int position) {
         String element = mwordList.get(position);
         holder.textview.setText(element);
+        // se agrego una escucha de los textos
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemClick(position);
+                }
+            }
+        });
     }
+
+
 
     /****** 6 este metodo lleva la cuenta de cuantos elementos hay en el listado  ****/
     @Override
     public int getItemCount() {
-
         return mwordList.size();
     }
 
