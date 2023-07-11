@@ -25,4 +25,5 @@
     <string name="titulo">RecycleView Images</string>
     <string name="texto">TextView</string>
     <string name="atras">Button</string>
+    <string name="boton_que_itera_algo">boton que itera algo</string>
 </resources>

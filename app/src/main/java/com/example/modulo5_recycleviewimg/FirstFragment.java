@@ -3,20 +3,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.modulo5_recycleviewimg.databinding.FragmentFirstBinding;
 import com.example.modulo5_recycleviewimg.databinding.FragmentFirstBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FirstFragment extends Fragment implements  Adapter.OnItemClickListerner{
+
+public class FirstFragment extends Fragment{
 
     private FragmentFirstBinding binding;
 
@@ -24,7 +20,7 @@ public class FirstFragment extends Fragment implements  Adapter.OnItemClickListe
     private Adapter adapter;
 
     private List<datosLista> dataList;
-    private int indice;
+
     List<datosLista> data= new ArrayList<>();
 
     @Override
@@ -95,17 +91,6 @@ public class FirstFragment extends Fragment implements  Adapter.OnItemClickListe
         binding = null;
     }
 
-    @Override
-    public void onItemClick(int position) {
-        indice =position;
-        datosLista eleccion= dataList.get(indice);
-        Bundle  bundle= new Bundle();
-        bundle.putString("url", eleccion.getUrl());
-        bundle.putString("datos",eleccion.getDato());
-        NavController  navController= Navigation.findNavController(getActivity(),R.id.fragmentContainerView);
-        navController.navigate(R.id.action_FirstFragment_to_SecondFragment,
-                bundle);
 
 
-    }
 }

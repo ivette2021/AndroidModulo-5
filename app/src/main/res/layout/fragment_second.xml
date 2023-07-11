@@ -4,35 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/frameLayout2"
     tools:context=".SecondFragment">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="187dp"
-        android:layout_height="162dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="144dp"
+        android:layout_width="321dp"
+        android:layout_height="247dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="132dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="192dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="240dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="50dp"
         android:text="@string/texto"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="186dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="35dp"
+        android:layout_width="225dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="@color/rclaro"
         android:text="@string/atras"
         app:layout_constraintStart_toStartOf="parent"
