@@ -1,6 +1,6 @@
 package com.example.kotlin
 
-// parte B ejercicio 22 v2
+// parte D ejercicio 22 v2
 
 // clase Bid que representa una oferta en una subasta y tiene un atributo amount que indica el importe de la oferta
 data class Bid(val amount: Int)
