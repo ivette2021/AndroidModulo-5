@@ -7,77 +7,83 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
-
+import com.example.bankapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
-    private var rbSaldo: RadioButton?=null
-    private var rbIngresar:RadioButton?=null
-    private var rbRetirar:RadioButton?=null
-    private var rbSalir:RadioButton?=null
-    private var tvsaldo:TextView?=null
-    private var txtingresar:EditText?=null
-    private var txtretirar:EditText?=null
+    private lateinit var binding: ActivityMainBinding
 
-    private var saldo=500.000
+    private var saldo = 500.000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        rbSaldo =findViewById(R.id.rbSaldo)
-        rbIngresar=findViewById(R.id.rbIngresar)
-        rbRetirar=findViewById(R.id.rbRetirar)
-        rbSalir=findViewById(R.id.confirmButton)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        tvsaldo =findViewById(R.id.tvsaldo)
-        txtingresar =findViewById(R.id.txtingresar)
-        txtretirar =findViewById(R.id.txtretirar)
+        binding.rbSaldo.setOnClickListener { accion() }
+        binding.rbIngresar.setOnClickListener { accion() }
+        binding.rbRetirar.setOnClickListener { accion() }
+        binding.rbSalir.setOnClickListener { accion() }
+
+        binding.confirmButton.setOnClickListener { btnConfirmar() }
     }
-    fun accion(view: View){
-        tvsaldo?.visibility= View.INVISIBLE
-        txtingresar?.visibility= View.INVISIBLE
-        txtretirar?.visibility= View.INVISIBLE
-        if (rbSaldo?.isChecked()==true){
-            tvsaldo?.visibility=View.VISIBLE
-            tvsaldo?.text="Tú Saldo es $saldo "
-        }
-        if (rbIngresar?.isChecked()==true){
-            txtingresar?.visibility = View.VISIBLE
-        }
-        if (rbRetirar?.isChecked()==true){
-            txtretirar?.visibility=View.VISIBLE
-        }
-        if (rbSalir?.isChecked()==true){
-            tvsaldo?.visibility = View.VISIBLE
-            tvsaldo?.text="Gracias por preferirnos"
-        }
-    }
-    fun rbConfirmar(view: View){
-        tvsaldo?.visibility= View.INVISIBLE
-        txtingresar?.visibility= View.INVISIBLE
-        txtretirar?.visibility= View.INVISIBLE
-        if (rbSaldo?.isChecked()==true){
-            tvsaldo?.visibility=View.VISIBLE
-            tvsaldo?.text="Tú Saldo es $saldo "
-        }
-        if (rbIngresar?.isChecked()==true){
-            var ingresar=txtingresar?.text.toString().toDouble()
-            saldo=saldo+ingresar
-            tvsaldo?.text="Tú Saldo es $saldo "
-            Toast.makeText(this,"tu operacion se realizo de forma exitos", Toast.LENGTH_LONG).show()
-        }
-        if (rbRetirar?.isChecked()==true){
-            var retirar= txtretirar?.text.toString().toDouble()
-            if(saldo-retirar <0.0){
-                tvsaldo?.text="Saldo Insuficiente"
-        }else{
-            saldo= saldo-retirar
-            tvsaldo?.text="su saldo es de $saldo"
-            Toast.makeText(this,"tu operacion se realizo de forma exitosa",Toast.LENGTH_LONG).show()
-        }
-        if (rbSalir?.isChecked()==true){
-            tvsaldo?.visibility = View.VISIBLE
-            tvsaldo?.text="tu operacion se realizo de forma exitosa"
-            finish()
-            System.exit(0)
+
+    private fun accion() {
+        binding.tvsaldo.visibility = View.INVISIBLE
+        binding.txtingresar.visibility = View.INVISIBLE
+        binding.txtretirar.visibility = View.INVISIBLE
+
+        when {
+            binding.rbSaldo.isChecked -> {
+                binding.tvsaldo.visibility = View.VISIBLE
+                binding.tvsaldo.text = "Tú Saldo es $saldo"
+            }
+            binding.rbIngresar.isChecked -> {
+                binding.txtingresar.visibility = View.VISIBLE
+            }
+            binding.rbRetirar.isChecked -> {
+                binding.txtretirar.visibility = View.VISIBLE
+            }
+            binding.rbSalir.isChecked -> {
+                binding.tvsaldo.visibility = View.VISIBLE
+                binding.tvsaldo.text = "Gracias por preferirnos"
+            }
         }
     }
-}}
+
+    private fun btnConfirmar() {
+        binding.tvsaldo.visibility = View.INVISIBLE
+        binding.txtingresar.visibility = View.INVISIBLE
+        binding.txtretirar.visibility = View.INVISIBLE
+
+        when {
+            binding.rbSaldo.isChecked -> {
+                binding.tvsaldo.text = "Tú Saldo es $saldo"
+                binding.tvsaldo.visibility = View.VISIBLE
+            }
+            binding.rbIngresar.isChecked -> {
+                val ingresar = binding.txtingresar.text.toString().toDouble()
+                saldo += ingresar
+                binding.tvsaldo.text = "Tú Saldo es $saldo"
+                binding.tvsaldo.visibility = View.VISIBLE
+                Toast.makeText(this, "Tu operación se realizó de forma exitosa", Toast.LENGTH_LONG).show()
+            }
+            binding.rbRetirar.isChecked -> {
+                val retirar = binding.txtretirar.text.toString().toDouble()
+                if (saldo - retirar < 0.0) {
+                    binding.tvsaldo.visibility = View.VISIBLE
+                    binding.tvsaldo.text = "Saldo Insuficiente"
+                } else {
+                    saldo -= retirar
+                    binding.tvsaldo.text = "Tu saldo es de $saldo"
+                    binding.tvsaldo.visibility = View.VISIBLE
+                    Toast.makeText(this, "Tu operación se realizó de forma exitosa", Toast.LENGTH_LONG).show()
+                }
+            }
+            binding.rbSalir.isChecked -> {
+                binding.tvsaldo.visibility = View.VISIBLE
+                binding.tvsaldo.text = "Tu operación se realizó de forma exitosa"
+                finish()
+                System.exit(0)
+            }
+        }
+    }
+}
