@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">ListViewSud</string>
-    <string name="TextView">Selecciona un nombre</string>
+    <string name="TextView">Selecciona un País</string>
 </resources>

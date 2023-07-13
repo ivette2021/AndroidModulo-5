@@ -5,5 +5,5 @@
     android:background="@color/voscuro"
     android:textColor="@color/blanco"
     android:textSize="24sp"
-    android:padding="10sp"
+    android:padding="15sp"
     xmlns:android="http://schemas.android.com/apk/res/android"/>
