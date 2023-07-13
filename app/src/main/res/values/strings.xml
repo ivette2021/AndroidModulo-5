@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Conversor</string>
+    <string name="textElije">Elije una divisa</string>
+    <string name="monto">Ingrese el monto</string>
+    <string name="convertir">Convertir a</string>
+    <string name="btnEviar">Convertir</string>
+    <string-array name="divisas">
+        <item>CLP</item>
+        <item>USD</item>
+        <item>EUR</item>
+    </string-array>
+</resources>
