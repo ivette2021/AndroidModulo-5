@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         val cantidad = binding.etCantidad
         val resultado = binding.tvResultado
         var total = 0.0
+        val btnReset = binding.btnReset
 
         sp1.adapter = adapter
         sp2.adapter = adapter
@@ -113,6 +114,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Ingrese una cantidad!!", Toast.LENGTH_LONG).show()
             }
+        }
+        btnReset.setOnClickListener {
+            // Restablecer los campos
+            sp1.setSelection(0)
+            sp2.setSelection(0)
+            cantidad.text.clear()
+            resultado.text = ""
         }
     }
 
