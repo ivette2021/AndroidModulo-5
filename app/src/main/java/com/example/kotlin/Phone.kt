@@ -1,5 +1,4 @@
 package com.example.kotlin
-fun main() {
     class Phone(var isScreenLightOn: Boolean = false) {
         fun switchOn() {
             isScreenLightOn = true
@@ -16,4 +15,3 @@ fun main() {
             println("The phone screen's light is $phoneScreenLight.")
         }
     }
-}

@@ -1,6 +1,12 @@
 package com.example.kotlin
- // apartado A del ejercicio 22 v2
+
+
 fun main() {
 
+val dato = Phone()
 
+dato.switchOn()
+dato.checkPhoneScreenLight()
+dato.switchOff()
+dato.checkPhoneScreenLight()
 }
