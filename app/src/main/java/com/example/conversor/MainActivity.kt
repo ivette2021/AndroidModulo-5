@@ -8,11 +8,12 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.conversor.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         val sp1 = binding.sp1
         val sp2 = binding.sp2
