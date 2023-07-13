@@ -34,28 +34,28 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
-            android:id="@+id/btnSaldo"
+            android:id="@+id/rbSaldo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
             android:text="Saldo" />
 
         <RadioButton
-            android:id="@+id/btnIngresar"
+            android:id="@+id/rbIngresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
             android:text="Ingresar monto" />
 
         <RadioButton
-            android:id="@+id/btnRetirar"
+            android:id="@+id/rbRetirar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
             android:text="Retirar monto" />
 
         <RadioButton
-            android:id="@+id/btnSalir"
+            android:id="@+id/rbSalir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
@@ -72,16 +72,17 @@
         android:layout_marginEnd="212dp"
         android:backgroundTint="@color/roscuro"
         android:fontFamily="@font/poppins"
+        android:onClick="rbConfirmar"
         android:text="Confirmar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtretirar" />
 
     <TextView
         android:id="@+id/tvsaldo"
-        android:layout_width="170dp"
+        android:layout_width="300dp"
         android:layout_height="42dp"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="212dp"
+        android:layout_marginEnd="80dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
