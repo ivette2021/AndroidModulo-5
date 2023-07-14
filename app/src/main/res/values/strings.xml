@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SharedPreferences</string>
+    <string name="hint1">Ingrese Numeros Enteros</string>
+    <string name="hint2">Ingresa un Texto</string>
+    <string name="hint3">Ingrese Numeros Decimal</string>
+    <string name="save3">Valor decimal almacenado : %1$d</string>
+    <string name="switchText">Hello First Fragment</string>
+    <string name="guardar">Guardar</string>
+    <string name="borrar">Borrar</string>
+</resources>
