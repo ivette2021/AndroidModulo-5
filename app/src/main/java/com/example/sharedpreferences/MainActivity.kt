@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     private val TEXTO_KEY = "texto_key"
     private val SWITCH_KEY = "switch_key"
     private val DECIMAL_KEY = "decimal_key"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -56,11 +55,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun cargarPreferencias() {
-        val enteroValue = sharedPref.getInt(ENTERO_KEY, 0)
+        val enteroValue = sharedPref.getInt(ENTERO_KEY,0)
         val textoValue = sharedPref.getString(TEXTO_KEY, "")
         val switchValue = sharedPref.getBoolean(SWITCH_KEY, false)
         val decimalValue = sharedPref.getFloat(DECIMAL_KEY, 0f)
-
+        // Mostrar las preferencias guardadas en los campos de texto
         binding.etEntero.setText(enteroValue.toString())
         binding.etTexto.setText(textoValue)
         binding.switch1.isChecked = switchValue

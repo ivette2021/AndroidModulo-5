@@ -7,4 +7,6 @@
     <string name="switchText">Hello First Fragment</string>
     <string name="guardar">Guardar</string>
     <string name="borrar">Borrar</string>
+    <string name="almacen1">Valor entero almacenado : %1$d</string>
+    <string name="almacen2">Valor entero almacenado : %1$d</string>
 </resources>

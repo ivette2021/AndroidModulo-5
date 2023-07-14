@@ -30,7 +30,7 @@
         android:layout_height="56dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:text="Valor entero almacenado : %1$d"
+        android:text="@string/almacen1"
         android:textSize="16sp"
         android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,8 @@
         android:text="@string/hint2"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+        app:layout_constraintTop_toBottomOf="@+id/tv1"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/tv2"
@@ -57,7 +58,7 @@
         android:layout_height="56dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:text="Valor entero almacenado : %1$d"
+        android:text="@string/almacen2"
         android:textSize="16sp"
         android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +74,8 @@
         android:textSize="16sp"
         android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv2"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <EditText
         android:id="@+id/etDecimal"
@@ -88,7 +90,8 @@
         android:textSize="16sp"
         android:background="@color/vclaro"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/tv3"
