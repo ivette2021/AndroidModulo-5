@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ContraseñaMVP</string>
+    <string name="check_strength">Check Strength</string>
+    <string name="password">Password</string>
+</resources>
