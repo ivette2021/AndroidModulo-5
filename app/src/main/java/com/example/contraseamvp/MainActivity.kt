@@ -37,12 +37,19 @@ class MainActivity : AppCompatActivity(), PasswordView {
 
     override fun showPasswordStrength(strength: PasswordStrength) {
         val color = when (strength) {
-            PasswordStrength.WEAK -> android.R.color.holo_red_light
-            PasswordStrength.MEDIUM -> android.R.color.holo_orange_light
-            PasswordStrength.STRONG -> android.R.color.holo_green_light
+            PasswordStrength.WEAK -> {
+                binding.passwordStrengthTextView.setText(R.string.password_weak)
+                android.R.color.holo_red_light
+            }
+            PasswordStrength.MEDIUM -> {
+                binding.passwordStrengthTextView.setText(R.string.password_medium)
+                android.R.color.holo_orange_light
+            }
+            PasswordStrength.STRONG -> {
+                binding.passwordStrengthTextView.setText(R.string.password_strong)
+                android.R.color.holo_green_light
+            }
         }
-
-        binding.passwordStrengthTextView.setText(R.string.check_strength)
         binding.passwordStrengthTextView.setTextColor(getColor(color))
     }
 }

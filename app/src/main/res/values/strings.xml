@@ -2,4 +2,8 @@
     <string name="app_name">ContraseñaMVP</string>
     <string name="check_strength">Check Strength</string>
     <string name="password">Password</string>
+    <string name="password_weak">Débil</string>
+    <string name="password_medium">Moderada</string>
+    <string name="password_strong">Fuerte</string>
+
 </resources>
