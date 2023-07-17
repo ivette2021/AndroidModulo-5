@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">ShoesTap</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis.
+
+
+
+    <string name="greeting">Hola, %1$s!</string>
+    <string name="try_again_msg">Intentalo otra vez !</string>
+    <string name="try_again_btn">Intentalo otra vez</string>
+    <string name="win_msg">Muy Bien, sigue asi !</string>
+    <string name="win_msg_btn">Siguiente</string>
+    <string name="question">¿A Quien pertence el logo?</string>
+    <string name="rb_answer1">Facebook</string>
+    <string name="rb_answer2">Telegram</string>
+    <string name="rb_answer3">Whatsapp</string>
+    <string name="rb_answer4">Line</string>
+    <string name="verificar">Siguiente</string>
+    <string name="btn_comenzar">Comenzar</string>
+    <string name="txt_logotrivia">Bienvenidos a Logo Trivia!!</string>
+    <string name="tu_nombre">Tu nombre</string>
+
+
+        <string name="titulo">RecycleView Images</string>
+    <string name="texto">TextView</string>
+    <string name="atras">Button</string>
+    <string name="boton_que_itera_algo">boton que itera algo</string>
+
+
+    </string>
+    <string name="titulo1">Our Product</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombre_articulo" />
+</resources>
