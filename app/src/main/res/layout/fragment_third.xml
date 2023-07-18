@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ThirdFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Elementos del fragmento ThirdFragment -->
 
     <ImageButton
         android:id="@+id/btn_atras"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btn_guardado"
+        android:id="@+id/btnClearCart"
         android:layout_width="65dp"
         android:layout_height="57dp"
         android:layout_marginTop="46dp"
@@ -57,17 +57,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Elementos del carrito de compras -->
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCart"
         android:layout_width="411dp"
         android:layout_height="490dp"
         android:layout_marginTop="41dp"
-        tools:itemCount="1"
-        tools:listitem="@layout/item_cart"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_guardado">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@+id/btnClearCart"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_cart" />
 
     <Button
         android:id="@+id/button"
@@ -80,6 +81,5 @@
         android:backgroundTint="@color/roscuro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

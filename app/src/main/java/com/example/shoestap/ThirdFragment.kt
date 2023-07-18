@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.shoestap.databinding.FragmentThirdBinding
+import android.content.Context
+import android.content.SharedPreferences
 
 class ThirdFragment : Fragment() {
 
     private var binding: FragmentThirdBinding? = null
+    private lateinit var sharedPreferences: SharedPreferences
+    val cartItems = sharedPreferences.getString("cart_items", "0")  // "0" es el valor predeterminado si no se encuentra ninguna entrada con la clave "cart_items"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,9 +27,17 @@ class ThirdFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sharedPreferences = requireActivity().getSharedPreferences("my_preference", Context.MODE_PRIVATE)
+
         binding?.btnAtras?.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
+        binding?.btnClearCart?.setOnClickListener {
+            val editor = sharedPreferences.edit()
+            editor.putString("cart_items", "0")  // Ejemplo de escritura de un valor
+            editor.apply()
+        }
+
     }
 
     override fun onDestroyView() {
