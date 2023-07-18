@@ -22,6 +22,7 @@ class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Ada
         val data = dataList[position]
 
         holder.textView.text = data.dato
+        holder.textView2.text = data.precio
         Glide.with(holder.itemView).load(data.url).into(holder.imageView)
 
         holder.itemView.setOnClickListener {
@@ -73,6 +74,7 @@ class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Ada
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.tv_nombre_articulo)
+        val textView2: TextView = itemView.findViewById(R.id.tv_precio)
         val imageView: ImageView = itemView.findViewById(R.id.imageView2)
         val fab: FloatingActionButton = itemView.findViewById(R.id.fab)
     }
