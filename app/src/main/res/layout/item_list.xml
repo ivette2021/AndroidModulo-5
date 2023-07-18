@@ -27,7 +27,7 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="139dp"
+                    android:layout_width="150dp"
                     android:layout_height="178dp"
                     android:scaleType="fitCenter"
                     tools:srcCompat="@tools:sample/avatars" />
@@ -42,19 +42,18 @@
                     app:layout_anchor="@id/bottomAppBar" />
             </LinearLayout>
             <!--layout_gravity ayuda a centrar dentro un layout global en este caso-->
+
+            <TextView
+                android:id="@+id/tv_nombre_articulo"
+                android:layout_width="113dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/tv_precio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="TextView"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/tv_nombre_articulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:text="TextView"
                 android:textSize="22sp" />
         </LinearLayout>

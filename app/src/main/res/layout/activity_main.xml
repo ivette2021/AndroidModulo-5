@@ -18,8 +18,8 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:layout_width="413dp"
-        android:layout_height="642dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="21dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bottomNavigationView"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             app:menu="@menu/menu_main"
             android:background="@drawable/transparent_background"/>
 
@@ -48,6 +48,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/fab"
+    android:contentDescription="@string/cart"
     android:src="@drawable/shopping_cart"
     app:layout_anchor="@id/bottomAppBar"/>
 

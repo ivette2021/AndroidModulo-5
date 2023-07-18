@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/blanco"
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
@@ -19,12 +20,12 @@
 
     <TextView
         android:id="@+id/tv_nombre_articulo"
-        android:layout_width="318dp"
-        android:layout_height="48dp"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:text="@string/nombre_articulo"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -53,38 +54,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_descipcion"
+        android:id="@+id/tv_descripcion"
         android:layout_width="173dp"
         android:layout_height="25dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="7dp"
         android:text="TextView"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nombre_articulo" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_margin="10dp"
+        android:layout_marginBottom="96dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_descripcion"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/tv_precio_big"
             android:layout_width="200dp"
-            android:layout_gravity="center_vertical"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_gravity="center_vertical"
+            android:text=""
             android:textSize="30sp" />
 
         <Button
             android:id="@+id/btn_addtocart"
             android:layout_width="162dp"
-            android:layout_margin="10dp"
-            android:layout_gravity="center_vertical"
             android:layout_height="54dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
             android:drawableLeft="@drawable/shopping_cart"
             android:text="add to cart" />
 

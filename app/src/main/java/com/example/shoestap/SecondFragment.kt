@@ -26,19 +26,15 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.btnAtras?.setOnClickListener {
-            val firstFragment = FirstFragment()
-            val fragmentManager = parentFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.fragmentContainerView, firstFragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
+            parentFragmentManager.popBackStack()
         }
 
         val bundle = arguments
         if (bundle != null) {
             val url = bundle.getString("url")
             val datos = bundle.getString("datos")
-
+            val precio = bundle.getString("precio")
+            val pDescription = bundle.getString("pDescription")
             // Cargar la imagen usando Glide o Picasso, se uso into para pasar directamente las ref. a imageview como parametro
             binding?.imageView?.let {
                 Glide.with(requireContext())
@@ -48,6 +44,8 @@ class SecondFragment : Fragment() {
 
             // Mostrar los datos adicionales
             binding?.tvNombreArticulo?.text = datos
+            binding?.tvPrecioBig?.text = precio
+            binding?.tvDescripcion?.text = pDescription
         }
     }
 
