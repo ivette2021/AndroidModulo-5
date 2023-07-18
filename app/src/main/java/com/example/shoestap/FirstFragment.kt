@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoestap.databinding.FragmentFirstBinding
-import com.google.firebase.ktx.Firebase
 
 class FirstFragment : Fragment() {
 
@@ -17,7 +16,6 @@ class FirstFragment : Fragment() {
 
     private lateinit var button: Button
     private var isHeartRed: Boolean = false
-
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: Adapter
     private var dataList: MutableList<datosLista> = ArrayList()
@@ -29,6 +27,8 @@ class FirstFragment : Fragment() {
     ): View? {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false)
+
+
 
         if (dataList.isNotEmpty()) {
             dataList.clear()
@@ -68,11 +68,11 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
     }
-
 }
+

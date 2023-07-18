@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
@@ -45,27 +44,6 @@ class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Ada
                     .commit()
             }
         }
-
-        holder.fab.setOnClickListener {
-            val position = holder.bindingAdapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                val eleccion = dataList[position]
-                val bundle = Bundle().apply {
-                    putString("url", eleccion.url)
-                    putString("datos", eleccion.dato)
-                    putString("precio", eleccion.precio)
-                    putString("pDescription", eleccion.pDescription)
-                }
-
-                val fragment = ThirdFragment()
-                fragment.arguments = bundle
-                val fragmentManager = (holder.fab.context as FragmentActivity).supportFragmentManager
-                fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainerView, fragment)
-                    .addToBackStack(null)
-                    .commit()
-            }
-        }
     }
 
     override fun getItemCount(): Int {
@@ -76,6 +54,5 @@ class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Ada
         val textView: TextView = itemView.findViewById(R.id.tv_nombre_articulo)
         val textView2: TextView = itemView.findViewById(R.id.tv_precio)
         val imageView: ImageView = itemView.findViewById(R.id.imageView2)
-        val fab: FloatingActionButton = itemView.findViewById(R.id.fab)
     }
 }
