@@ -2,9 +2,13 @@ package com.example.shoestap
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +29,6 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = FragmentFirstBinding.inflate(inflater, container, false)
 
 
@@ -47,8 +50,6 @@ class FirstFragment : Fragment() {
 
         return binding?.root
     }
-
-
     private fun getData(): MutableList<datosLista> {
 
 
@@ -65,10 +66,13 @@ class FirstFragment : Fragment() {
         data.add(datosLista("ZAPATILLAS SUPERSTAR", "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/15f901c90a9549d29104aae700d27efb_9366/Zapatillas_Superstar_Negro_EG4959_01_standard.jpg", "89.990","zapatilla negra"))
         return data
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
