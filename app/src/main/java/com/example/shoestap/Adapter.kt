@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+
 class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -46,7 +45,7 @@ class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Ada
             }
         }
 
-        holder.fabButton.setOnClickListener {
+        holder.fab.setOnClickListener {
             val position = holder.bindingAdapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 val eleccion = dataList[position]
@@ -59,7 +58,7 @@ class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Ada
 
                 val fragment = ThirdFragment()
                 fragment.arguments = bundle
-                val fragmentManager = (holder.itemView.context as FragmentActivity).supportFragmentManager
+                val fragmentManager = (holder.fab.context as FragmentActivity).supportFragmentManager
                 fragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainerView, fragment)
                     .addToBackStack(null)
@@ -75,6 +74,6 @@ class Adapter(private val dataList: List<datosLista>) : RecyclerView.Adapter<Ada
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.tv_nombre_articulo)
         val imageView: ImageView = itemView.findViewById(R.id.imageView2)
-        val fabButton: FloatingActionButton = itemView.findViewById(R.id.fab)
+        val fab: FloatingActionButton = itemView.findViewById(R.id.fab)
     }
 }
